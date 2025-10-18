@@ -3,10 +3,17 @@ import React, { useState, ChangeEvent } from "react";
 
 export default function Create() {
     const [msg, setMsg] = useState<string>("");
+    const [method, setMethod] = useState<string>("md5");
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setMsg(e.target.value);
     };
+
+    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setMethod(e.target.value);
+    };
+
+
 
     return (
         <>
