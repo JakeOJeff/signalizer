@@ -6,12 +6,19 @@ export default function Create() {
     const [msg, setMsg] = useState<string>("");
     const [method, setMethod] = useState<string>("sha-256");
     const [encoded, setEncoded] = useState("");
+    const [cryptoType, setCryptoType] = useState("Encrypt");
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setMsg(e.target.value);
     };
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        if (e.target.value != "sha-256"){
+            setCryptoType("Encode");
+        }
+        else {
+            setCryptoType("Encrypt")
+        }
         setMethod(e.target.value);
     };
 
@@ -28,10 +35,13 @@ export default function Create() {
         <>
             <main className="bg-gray-900 flex flex-col items-center justify-center min-h-screen w-full">
                 <div className="flex flex-col items-center justify-center">
-                    <h1 className="text-7xl my-4 text-white">Signalizer</h1>
-                    <h3 className="text-2xl mb-10 text-gray-300">
-                        Enter/Paste the message you need to encode.
+                    <h1 className="text-8xl my-4 text-white">Signalizer</h1>
+                    <h3 className="text-3xl mb-2 text-gray-300">
+                        Enter/Paste the message you need to Encode/Encrypt
                     </h3>
+                    <h4 className="text-xl mb-10 text-gray-400">
+                        ( Encrypted messages cannot be decoded )
+                    </h4>
                 </div>
 
                 <div className="flex flex-col items-center justify-center">
@@ -53,14 +63,14 @@ export default function Create() {
                         <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300"
                                 onClick={handleEncode}
                         >
-                            Encode Message
+                            {cryptoType} Message
                         </button>
                     </div>
 
                 </div>
                     {encoded && (
 
-                        <div>
+                        <div className="EE">
                             {encoded}
                         </div>
                     )}
