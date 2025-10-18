@@ -3,7 +3,11 @@ import { useState, ChangeEvent } from 'react';
 
 
 export default function create() {
-    const [name, setName] = useState<string>("");
+    const [msg, setMsg] = useState<string>("");
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>){
+        setMsg(e.target.value);
+    };
     return (
         <>
             <main className="bg-gray-900 flex flex-col items-center justify-center min-h-screen w-full">
