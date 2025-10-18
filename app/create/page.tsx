@@ -20,8 +20,6 @@ export default function Create() {
     };
 
 
-
-
     return (
         <>
             <main className="bg-gray-900 flex flex-col items-center justify-center min-h-screen w-full">
@@ -37,30 +35,7 @@ export default function Create() {
                         value={msg}
                         onChange={handleInputChange}
                         placeholder="Enter/paste message"
-                        className="
-                            rounded-2xl 
-                            mr-2 
-                            mb-5 
-                            outline-3 
-                            outline-gray-500 
-                            bg-gray-600 
-                            p-6 
-                            w-[600px]
-                            h-[240px]
-                            resize-none 
-                            text-xl 
-                            font-bold 
-                            text-white
-                            text-left 
-                            align-top
-                            whitespace-pre-wrap
-                            break-words
-                            duration-500 
-                            hover:bg-gray-700 
-                            focus:outline-none 
-                            focus:ring-2 
-                            focus:ring-gray-400
-                            "
+                        className="rounded-2xl mr-2 mb-5 outline-3  outline-gray-500 p-6 w-[600px] h-[240px] resize-none text-xl  font-bold  text-white text-left align-top whitespace-pre-wrap break-words duration-500  hover:bg-gray-700  focus:outline-none  focus:ring-2  focus:ring-gray-400"
                     />
                     <div>
                         <select className="opacity-50 hover:opacity-100 rounded-4xl mr-2 outline-3 outline-gray-500 bg-gray-600 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-700"
