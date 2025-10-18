@@ -12,6 +12,18 @@ export async function POST(req:Request) {
                 { status: 400 }
             )
         }
+
+        const result = await encodeMessage(message, method);
+        const encryptState = ( method == "SHA-256") ? true : false
+        return NextResponse.json(
+            { 
+                encoded : result ,
+                encrypted : encryptState
+            },
+            {
+                status : 200
+            }
+        )
     } catch (error) {
         console.error("Encode API error:", error)
         return NextResponse.json(
