@@ -2,6 +2,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { encodeMessage } from "../utils/encodeMessage";
 
+
 export default function Create() {
     const [msg, setMsg] = useState<string>("");
     const [method, setMethod] = useState<string>("SHA-256");

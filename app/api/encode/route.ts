@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { encodeMessage } from "@/app/utils/encodeMessage";
 
+// curl -X POST http://localhost:3000/api/encode \  -H "Content-Type: application/json" \  -d '{"message": "hello", "method": "SHA-256"}' 
 export async function POST(req:Request) {
     try {
         const { message, method } = await req.json();
