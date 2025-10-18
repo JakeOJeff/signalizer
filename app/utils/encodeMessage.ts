@@ -62,6 +62,11 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             break;
         }
 
+        case "binary":{
+            result = msg.split("").map((ch) => ch.charCodeAt(0).toString(2).padStart(8, "0")).join(" ");
+            break;
+        }
+            
         
 
     }
