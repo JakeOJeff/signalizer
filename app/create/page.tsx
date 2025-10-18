@@ -68,6 +68,7 @@ export default function Create() {
                         >
                             <option value="sha-256">SHA-256 Hash</option>
                             <option value="morse">Morse Code</option>
+                            <option value="binary">Binary</option>
 
                         </select>
                         <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300"
