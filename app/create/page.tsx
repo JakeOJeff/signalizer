@@ -4,7 +4,7 @@ import { encodeMessage } from "../utils/encodeMessage";
 
 export default function Create() {
     const [msg, setMsg] = useState<string>("");
-    const [method, setMethod] = useState<string>("sha-256");
+    const [method, setMethod] = useState<string>("SHA-256");
     const [encoded, setEncoded] = useState("");
     const [cryptoType, setCryptoType] = useState("Encrypt");
     const [copied, setCopied] = useState<boolean>(false)
@@ -14,7 +14,7 @@ export default function Create() {
     };
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        if (e.target.value != "sha-256"){
+        if (e.target.value != "SHA-256"){
             setCryptoType("Encode");
         }
         else {
@@ -62,11 +62,11 @@ export default function Create() {
                         className="rounded-2xl mr-2 mb-5 outline-3  outline-gray-500 p-6 w-[600px] h-[240px] resize-none text-xl  font-bold  text-white text-left align-top whitespace-pre-wrap break-words duration-500  hover:bg-gray-700  focus:outline-none  focus:ring-2  focus:ring-gray-400"
                     />
                     <div>
-                        <select className="opacity-50 hover:opacity-100 rounded-4xl mr-2 outline-3 outline-gray-500 bg-gray-600 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-700"
+                        <select className="opacity-50 hover:opacity-100 rounded-4xl  mr-2 outline-3 outline-gray-500 bg-gray-600 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-700"
                                 value={method}
                                 onChange={handleSelectChange}
                         >
-                            <option value="sha-256">SHA-256 Hash</option>
+                            <option value="SHA-256">SHA-256 Hash</option>
                             <option value="morse">Morse Code</option>
                             <option value="binary">Binary</option>
 
@@ -81,7 +81,7 @@ export default function Create() {
                 </div>
                     {encoded && (
 
-                        <button className="cursor-pointer font-bold outline-2 p-4 rounded-full text-xl m-10 mb-4 duration-500 hover:text-gray-400"
+                        <button className="cursor-pointer font-bold outline-2 p-6 rounded-4xl lg:rounded-full text-xl m-10 mb-4 duration-500 hover:text-gray-400"
                                 onClick={copyCrypto}
                         >
                             {encoded}
