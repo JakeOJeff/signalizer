@@ -56,9 +56,13 @@ export async function encodeMessage(msg: string, method: string): Promise<string
                 "7": "--...",
                 "8": "---..",
                 "9": "----.",
-                " ": " ",
-            }
+                " ": "/",
+            };
+            result = msg.toLowerCase().split("").map((ch) => morseMap[ch] || "").join(" ");
+            break;
         }
+
+        
 
     }
 
