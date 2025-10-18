@@ -13,6 +13,13 @@ export default function Create() {
         setMethod(e.target.value);
     };
 
+    const handleEncode = () => {
+
+        console.log(`Encoding "${msg}" using "${method}"`)
+
+    };
+
+
 
 
     return (
@@ -64,7 +71,9 @@ export default function Create() {
                             <option value="morse">Morse Code</option>
 
                         </select>
-                        <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300">
+                        <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300"
+                                onClick={handleEncode}
+                        >
                             Encode Message
                         </button>
                     </div>
