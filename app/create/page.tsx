@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
+import { encodeMessage } from "../utils/encodeMessage";
 
 export default function Create() {
     const [msg, setMsg] = useState<string>("");
     const [method, setMethod] = useState<string>("md5");
+    const [encoded, setEncoded] = useState("");
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setMsg(e.target.value);
@@ -13,9 +15,11 @@ export default function Create() {
         setMethod(e.target.value);
     };
 
-    const handleEncode = () => {
-        
+    const handleEncode = async() => {
+
         console.log(`Encoding "${msg}" using "${method}"`)
+        const result = await encodeMessage(msg, method);
+        setEncoded(result);
 
     };
 
