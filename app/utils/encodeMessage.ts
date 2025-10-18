@@ -2,7 +2,7 @@ import { hash } from "crypto";
 
 export async function encodeMessage(msg: string, method: string): Promise<string> {
     if (!msg.trim()) {
-        return "Please Enter a message to encode";
+        return "Please enter a message to encode";
     }
 
     let result = "";

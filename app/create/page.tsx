@@ -33,11 +33,13 @@ export default function Create() {
     };
 
     const copyCrypto = async() => {
-        await navigator.clipboard.writeText(encoded);
-        setCopied(true);
-        setTimeout(() => {
-            setCopied(false);
-        }, 2000);
+        if (encoded != "Please enter a message to encode"){
+            await navigator.clipboard.writeText(encoded);
+            setCopied(true);
+            setTimeout(() => {
+                setCopied(false);
+            }, 2000);
+        }
     }
 
 
