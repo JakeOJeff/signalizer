@@ -14,7 +14,7 @@ export default function Create() {
     };
 
     const handleEncode = () => {
-
+        
         console.log(`Encoding "${msg}" using "${method}"`)
 
     };
