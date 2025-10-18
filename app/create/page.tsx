@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { useState, ChangeEvent } from 'react';
 
@@ -5,7 +6,7 @@ import { useState, ChangeEvent } from 'react';
 export default function create() {
     const [msg, setMsg] = useState<string>("");
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>){
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>)=>{
         setMsg(e.target.value);
     };
     return (
@@ -16,9 +17,14 @@ export default function create() {
                     <h3 className="text-2xl mb-15">Enter/Paste the message you need to encode.</h3>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                
+                    <input 
+                        type="text"
+                        value={msg}
+                        onChange={handleInputChange}
+                        placeholder='Enter/paste message'
+                    />
                 </div>
-                </main>
+            </main>
         </>
     );
 }
