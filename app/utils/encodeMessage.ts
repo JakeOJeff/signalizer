@@ -9,7 +9,7 @@ export async function encodeMessage(msg: string, method: string): Promise<string
 
     switch (method) {
 
-        case "md5": {
+        case "sha-256": {
             const encoder = new TextEncoder();
             const data = encoder.encode(msg);
             const hashBuffer = await crypto.subtle.digest("SHA-256", data);

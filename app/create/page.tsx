@@ -4,7 +4,7 @@ import { encodeMessage } from "../utils/encodeMessage";
 
 export default function Create() {
     const [msg, setMsg] = useState<string>("");
-    const [method, setMethod] = useState<string>("md5");
+    const [method, setMethod] = useState<string>("sha-256");
     const [encoded, setEncoded] = useState("");
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -46,7 +46,7 @@ export default function Create() {
                                 value={method}
                                 onChange={handleSelectChange}
                         >
-                            <option value="md5">MD5 Hash</option>
+                            <option value="sha-256">SHA-256 Hash</option>
                             <option value="morse">Morse Code</option>
 
                         </select>
