@@ -7,6 +7,7 @@ export default function Create() {
     const [method, setMethod] = useState<string>("sha-256");
     const [encoded, setEncoded] = useState("");
     const [cryptoType, setCryptoType] = useState("Encrypt");
+    const [copied, setCopied] = useState<boolean>(false)
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setMsg(e.target.value);
@@ -19,6 +20,7 @@ export default function Create() {
         else {
             setCryptoType("Encrypt")
         }
+        setEncoded("");
         setMethod(e.target.value);
     };
 
@@ -29,6 +31,14 @@ export default function Create() {
         setEncoded(result);
 
     };
+
+    const copyCrypto = async() => {
+        await navigator.clipboard.writeText(encoded);
+        setCopied(true);
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    }
 
 
     return (
@@ -70,10 +80,19 @@ export default function Create() {
                 </div>
                     {encoded && (
 
-                        <div className="cursor-pointer font-bold outline-2 p-4 rounded-full text-xl m-10 duration-500 hover:text-gray-400">
+                        <button className="cursor-pointer font-bold outline-2 p-4 rounded-full text-xl m-10 mb-4 duration-500 hover:text-gray-400"
+                                onClick={copyCrypto}
+                        >
                             {encoded}
-                        </div>
-                    )}
+                        </button>)
+
+                    }
+                    {copied && (
+                                <div className="text-white text-md bg-gray-600 px-2 py-1 rounded-md">
+                                    Copied!
+                                </div>
+                            )
+                        }
             </main>
         </>
     );
