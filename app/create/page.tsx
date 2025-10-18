@@ -70,7 +70,7 @@ export default function Create() {
                 </div>
                     {encoded && (
 
-                        <div className="EE">
+                        <div className="cursor-pointer font-bold outline-2 p-4 rounded-full text-xl m-10 duration-500 hover:text-gray-400">
                             {encoded}
                         </div>
                     )}
