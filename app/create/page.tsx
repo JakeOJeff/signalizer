@@ -58,6 +58,12 @@ export default function Create() {
                     </div>
 
                 </div>
+                    {encoded && (
+
+                        <div>
+                            {encoded}
+                        </div>
+                    )}
             </main>
         </>
     );
