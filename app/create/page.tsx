@@ -18,10 +18,12 @@ export default function create() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <input 
+                        
                         type="text"
                         value={msg}
                         onChange={handleInputChange}
                         placeholder='Enter/paste message'
+                        className="rounded-2xl mr-2 outline-3 outline-gray-500 bg-gray-600 pl-6 pt-6 pr-30 pb-30 text-xl font-bold duration-500 hover:bg-gray-700"
                     />
                 </div>
             </main>
