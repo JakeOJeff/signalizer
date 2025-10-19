@@ -14,7 +14,16 @@ export default function Bruteforce() {
         if (urlHash) {
             setHash(decodeURIComponent(urlHash))
         }
-    })
+    }, [searchParams])
+
+    const handleHashchange = (e: ChangeEvent<HTMLInputElement>) => {
+        setHash(e.target.value);
+    }
+
+    const handleWordlistChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setWordlist(e.target.value);
+    }
 
 
+    
 }
