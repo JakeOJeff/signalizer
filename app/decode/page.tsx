@@ -16,10 +16,10 @@ export default function Create() {
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         if (e.target.value != "SHA-256"){
-            setCryptoType("Encode");
+            setCryptoType("Decode");
         }
         else {
-            setCryptoType("Encrypt")
+            setCryptoType("Brute-force")
         }
         setEncoded("");
         setMethod(e.target.value);
@@ -50,10 +50,10 @@ export default function Create() {
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="text-8xl my-4 text-white">Signalizer</h1>
                     <h3 className="text-3xl mb-2 text-gray-300">
-                        Enter/Paste the message you need to Encode/Encrypt
+                        Enter/Paste the message you need to Decode/Decrypt
                     </h3>
                     <h4 className="text-xl mb-10 text-gray-400">
-                        ( Encrypted messages cannot be decoded )
+                        ( Encrypted messages cannot be decoded. It can be attempted using bruteforce )
                     </h4>
                 </div>
 
@@ -61,7 +61,7 @@ export default function Create() {
                     <textarea
                         value={msg}
                         onChange={handleInputChange}
-                        placeholder="Enter/paste message"
+                        placeholder="Enter/paste decoded Value"
                         className="rounded-2xl mr-2 mb-5 outline-3  outline-gray-500 p-6 w-[600px] h-[240px] resize-none text-xl  font-bold  text-white text-left align-top whitespace-pre-wrap break-words duration-500  hover:bg-gray-700  focus:outline-none  focus:ring-2  focus:ring-gray-400"
                     />
                     <div>
