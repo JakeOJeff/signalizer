@@ -39,6 +39,14 @@ export async function decodeMessage(msg: string, method: string): Promise<string
                 .map(code => morseMap[code] || "?")
                 .join("");
             break;
+        } 
+
+        case "binary": {
+            try {
+                result = msg.split(" ").map(bin => String.fromCharCode(parseInt(bin, 2))).join("");
+            } catch {
+                result = "invalid Binary String"
+            }
         }
     }
 
