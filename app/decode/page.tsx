@@ -77,7 +77,8 @@ export default function Create() {
                             <option value="base64">Base64</option>
                             <option value="caesar">Caeser Cipher</option>
                             <option value="rot13">ROT13</option>
-
+                            <option value="url">URL</option>
+                            <option value="reverse">Reverse</option>
                         </select>
                         <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300"
                                 onClick={handleEncode}
