@@ -1,11 +1,11 @@
 export async function decodeMessage(msg: string, method: string): Promise<string> {
-    
+
     if (!msg.trim()) return "";
 
     let result = "";
 
     switch (method.toLowerCase()) {
-         // this is for reference : SHA, Morse, Binary, Base64, hex, Caesar, rot13
+        // this is for reference : SHA, Morse, Binary, Base64, hex, Caesar, rot13
 
         case "sha-256": {
             result = "Encryped values cannot be decrypted. Try Brute-Force";
@@ -27,7 +27,7 @@ export async function decodeMessage(msg: string, method: string): Promise<string
                 .map(code => morseMap[code] || "?")
                 .join("");
             break;
-        } 
+        }
         case "binary": {
 
             const cleaned = msg.trim();
@@ -66,18 +66,26 @@ export async function decodeMessage(msg: string, method: string): Promise<string
                 result = "Invalid Hex String"
             }
         }
-         
+
         case "caesar": {
             const shift = 3;
             result = msg.split("").map(ch => {
-                if (/[a-z]/.test(ch)){
-                    return String.fromCharCode(((ch.charCodeAt(0) - 97 - shift + 26) % 26 ) + 97);
+                if (/[a-z]/.test(ch)) {
+                    return String.fromCharCode(((ch.charCodeAt(0) - 97 - shift + 26) % 26) + 97);
                 }
                 else if (/[A-Z]/.test(ch)) {
-                    return String.fromCharCode(((ch.charCodeAt(0) - 65 - shift + 26) % 26 ) + 65);
+                    return String.fromCharCode(((ch.charCodeAt(0) - 65 - shift + 26) % 26) + 65);
                 }
                 return ch;
             }).join("");
+            break;
+        }
+
+        case "rot13": {
+            result = msg.replace(/[a-zA-Z]/g, c => {
+                const base = c <= "Z" ? 65 : 97;
+                return String.fromCharCode(((c.charCodeAt(0) - base + 13) % 26) + base);
+            });
             break;
         }
     }
