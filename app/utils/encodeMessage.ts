@@ -77,7 +77,7 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             break;
         }
 
-        case "caesar": {
+        case "caeser": {
             const shift = 3;
             result = msg.split("").map(ch => {
                 if (/[a-z]/.test(ch)) {
