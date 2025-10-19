@@ -75,6 +75,7 @@ export default function Create() {
                             <option value="hex">Hex</option>
                             <option value="base64">Base64</option>
                             <option value="caeser">Caeser Cipher</option>
+                            <option value="rot13">ROT13</option>
 
                         </select>
                         <button className="rounded-4xl ml-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 px-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300"
