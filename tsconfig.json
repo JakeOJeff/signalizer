@@ -25,7 +25,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@utils/*": ["app/utils/*"]
+      "@utils/*": ["utils/*"]
     }
   },
   "include": [

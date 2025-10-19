@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
-import { encodeMessage } from "utils/encodeMessage";
+import { encodeMessage } from "../../utils/encodeMessage";
 
 
 export default function Create() {
