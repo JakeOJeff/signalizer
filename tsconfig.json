@@ -23,7 +23,6 @@
       }
     ],
 
-    // 👇 added this
     "baseUrl": ".",
     "paths": {
       "@utils/*": ["app/utils/*"]
