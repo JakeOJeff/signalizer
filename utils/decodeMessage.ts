@@ -88,6 +88,20 @@ export async function decodeMessage(msg: string, method: string): Promise<string
             });
             break;
         }
+
+        case "url": {
+            try {
+                result = decodeURIComponent(msg);
+            } catch {
+                result = "Invalid URL Encoding"
+            }
+            break;
+        }
+
+        case "reverse": {
+            result = msg.split("").reverse().join("");
+            break;
+        }
     }
     return result;
 }
