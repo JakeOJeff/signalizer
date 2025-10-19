@@ -5,21 +5,12 @@ export async function decodeMessage(msg: string, method: string): Promise<string
     let result = "";
 
     switch (method.toLowerCase()) {
+        // SHA, Morse, Binary, Base64, hex, Caesar
 
         case "sha-256": {
             result = "Encryped values cannot be decrypted. Try Brute-Force";
             break;
         }
-
-        case "base64": {
-            try {
-                result = Buffer.from(msg, "base64").toString("utf-8");
-            } catch {
-                result = "Invalid Base64 String"
-            }
-            break;
-        }
-
         case "morse": {
             const morseMap: Record<string, string> = {
                 ".-": "a", "-...": "b", "-.-.": "c", "-..": "d", ".": "e",
@@ -37,7 +28,6 @@ export async function decodeMessage(msg: string, method: string): Promise<string
                 .join("");
             break;
         } 
-
         case "binary": {
 
             const cleaned = msg.trim();
@@ -60,6 +50,25 @@ export async function decodeMessage(msg: string, method: string): Promise<string
             break;
         }
 
+        case "base64": {
+            try {
+                result = Buffer.from(msg, "base64").toString("utf-8");
+            } catch {
+                result = "Invalid Base64 String"
+            }
+            break;
+        }
+
+        case "hex": {
+            try {
+                result = msg.split(" ").map(hex => String.fromCharCode(parseInt(hex, 16))).join("");
+            } catch {
+                result = "Invalid Hex String"
+            }
+        }
+        
+
+        
         case "caesar": {
             const shift = 3;
             result = msg.split("").map(ch => {

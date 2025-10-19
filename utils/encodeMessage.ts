@@ -7,6 +7,7 @@ export async function encodeMessage(msg: string, method: string): Promise<string
     let result = "";
 
     switch (method) {
+        // SHA, Morse, Binary, Base64, hex, Caesar
 
         case "SHA-256": {
             const encoder = new TextEncoder();
