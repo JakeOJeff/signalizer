@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect, ChangeEvent, use } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function Bruteforce() {
@@ -8,6 +8,10 @@ export default function Bruteforce() {
     const searchParams = useSearchParams();
     const [hash, setHash] = useState<string>("");
     const [wordlist, setWordlist] = useState<string>("rockyou");
+    const [isBruteForcing, setIsBruteForcing] = useState<boolean>(false);
+    const [progress, setProgress] = useState<number>(0);
+    const [result, setResult] = useState<string>("");
+    
 
     useEffect(() => {
         const urlHash = searchParams.get('hash');
@@ -55,6 +59,10 @@ export default function Bruteforce() {
                                 {/* <option value="custom">Custom Wordlist</option> */}
                             </select>
                         </div>
+
+                        {isBruteForcing && (
+
+                        )}
                     </div>
                 
                 </div>
