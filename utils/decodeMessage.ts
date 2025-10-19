@@ -66,9 +66,7 @@ export async function decodeMessage(msg: string, method: string): Promise<string
                 result = "Invalid Hex String"
             }
         }
-        
-
-        
+         
         case "caesar": {
             const shift = 3;
             result = msg.split("").map(ch => {

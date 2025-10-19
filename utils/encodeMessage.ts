@@ -92,6 +92,14 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             }).join("");
             break;
         }
+
+        case "rot13": {
+            result = msg.replace(/[a-zA-Z]/g, c => {
+                const base = c <= "Z" ? 65 : 97 ;
+                return String.fromCharCode(((c.charCodeAt(0) - base + 13 ) % 26 ) + base);
+            });
+            break;
+        }
     }
     return result;
 }
