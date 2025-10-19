@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
-import { decodeMessage } from "@/app/utils/decodeMessage";
+import { decodeMessage } from "../utils/decodeMessage";
 
 
 export default function Create() {

@@ -1,4 +1,3 @@
-import { hash } from "crypto";
 
 export async function encodeMessage(msg: string, method: string): Promise<string> {
     if (!msg.trim()) {
