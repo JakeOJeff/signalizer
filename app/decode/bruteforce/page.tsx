@@ -30,6 +30,19 @@ export default function Bruteforce() {
         setWordlist(e.target.value);
     }
 
+    const getSelectedWordlist = async (): Promise<string[]> => {
+        switch (wordlist) {
+            case "common":
+                return wordlists.common;
+                break;
+
+            case "rockyou":
+                return wordlists.common; // temporary
+                break;
+
+        }
+    }
+
     const startBruteforce = async () => {
         if (!hash) {
             alert("Please enter a SHA-256 hash");
@@ -42,7 +55,7 @@ export default function Bruteforce() {
         setAttempts(0);
 
         try {
-            // const selectedWordlist = await getSelectedWordlist();
+            const selectedWordlist = await getSelectedWordlist();
             const totalWords = selectedWordlist.length;
             
             if (totalWords === 0) {
