@@ -40,16 +40,16 @@ export default function Bruteforce() {
         setResult("");
         setAttempts(0);
 
-        try {
+        // try {
            
             
             
-        } catch (error) {
-            setResult("Error during bruteforce process");
-        } finally {
-            setIsBruteForcing(false);
-            setProgress(100);
-        }
+        // } catch (error) {
+        //     setResult("Error during bruteforce process");
+        // } finally {
+        //     setIsBruteForcing(false);
+        //     setProgress(100);
+        // }
     };
     return (
         <>
