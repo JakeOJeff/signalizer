@@ -5,7 +5,7 @@ export async function decodeMessage(msg: string, method: string): Promise<string
     let result = "";
 
     switch (method.toLowerCase()) {
-        // SHA, Morse, Binary, Base64, hex, Caesar
+         // this is for reference : SHA, Morse, Binary, Base64, hex, Caesar, rot13
 
         case "sha-256": {
             result = "Encryped values cannot be decrypted. Try Brute-Force";
