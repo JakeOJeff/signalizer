@@ -11,7 +11,7 @@ export default function Home() {
           </div>
           <div className="flex flex-row justify-center items-center">
              <a className="rounded-4xl mr-2 outline-3 outline-gray-300 text-gray-800 bg-gray-100 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-300" href="/create" >Create Signal</a>
-            <a className="opacity-50 hover:opacity-100 rounded-4xl ml-2 outline-3 outline-gray-500 bg-gray-600 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-700" href="/create">Decode Signal</a>
+            <a className="opacity-50 hover:opacity-100 rounded-4xl ml-2 outline-3 outline-gray-500 bg-gray-600 p-4 pr-6 pl-6 text-xl font-bold cursor-pointer duration-500 hover:bg-gray-700" href="/decode">Decode Signal</a>
           </div>
         </div>
       </main>
