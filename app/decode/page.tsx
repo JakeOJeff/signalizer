@@ -8,7 +8,7 @@ export default function Create() {
     const [msg, setMsg] = useState<string>("");
     const [method, setMethod] = useState<string>("SHA-256");
     const [encoded, setEncoded] = useState("");
-    const [cryptoType, setCryptoType] = useState("Encrypt");
+    const [cryptoType, setCryptoType] = useState("Brute-Force");
     const [copied, setCopied] = useState<boolean>(false)
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {

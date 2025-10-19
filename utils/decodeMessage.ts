@@ -59,6 +59,20 @@ export async function decodeMessage(msg: string, method: string): Promise<string
             }
             break;
         }
+
+        case "caesar": {
+            const shift = 3;
+            result = msg.split("").map(ch => {
+                if (/[a-z]/.test(ch)){
+                    return String.fromCharCode(((ch.charCodeAt(0) - 97 - shift + 26) % 26 ) + 97);
+                }
+                else if (/[A-Z]/.test(ch)) {
+                    return String.fromCharCode(((ch.charCodeAt(0) - 65 - shift + 26) % 26 ) + 65);
+                }
+                return ch;
+            }).join("");
+            break;
+        }
     }
     return result;
 }
