@@ -29,7 +29,28 @@ export default function Bruteforce() {
         setWordlist(e.target.value);
     }
 
+    const startBruteforce = async () => {
+        if (!hash) {
+            alert("Please enter a SHA-256 hash");
+            return;
+        }
 
+        setIsBruteForcing(true);
+        setProgress(0);
+        setResult("");
+        setAttempts(0);
+
+        try {
+           
+            
+            
+        } catch (error) {
+            setResult("Error during bruteforce process");
+        } finally {
+            setIsBruteForcing(false);
+            setProgress(100);
+        }
+    };
     return (
         <>
             <main className="bg-gray-900 flex flex-col items-center justify-center min-h-screen w-full p-8">
@@ -62,12 +83,12 @@ export default function Bruteforce() {
                         </div>
 
                         <button
-                            onClick={}
+                            onClick={startBruteforce}
                             disabled={isBruteForcing || !hash}
                             className={`w-full p-4 rounded-xl text-xl font-bold ${
                                 isBruteForcing || !hash
                                     ? 'bg-gray-600 cursor-not-allowed'
-                                    : 'bg-red-600 hover:bg-red-700 cursor-pointer'
+                                    : 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
                             } text-white transition-colors duration-300`}
                         >
                             {isBruteForcing ? 'Bruteforcing...' : 'Start Bruteforce'}
