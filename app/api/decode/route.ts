@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { decodeMessage } from "@/app/utils/decodeMEssage";
+import { decodeMessage } from "@/app/utils/decodeMessage";
 
 // curl -X POST http://localhost:3000/api/decode  -H "Content-Type: application/json"  -d "{\"message\":\"aGVsbG8=\",\"method\":\"base64\"}"
 export async function POST(req:Request) {
