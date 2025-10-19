@@ -66,6 +66,11 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             result = msg.split("").map((ch) => ch.charCodeAt(0).toString(2).padStart(8, "0")).join(" ");
             break;
         }
+
+        case "hex": {
+            result = msg.split("").map(ch => ch.charCodeAt(0).toString(16).padStart(2, "0")).join(" ");
+            break;
+        }
             
         
 
