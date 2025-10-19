@@ -74,6 +74,15 @@ export default function Bruteforce() {
                             </p>
                             </div>
                         )}
+                        
+
+                        {result && (
+                            <div className={`p-4 rounded-xl text-center text-lg font-semibold ${
+                                result.includes('Found') ? 'bg-green-900 text-green-300' : 'bg-red-900 text-red-300'
+                            }`}>
+                                {result}
+                            </div>
+                        )}
                     </div>
                 
                 </div>
