@@ -11,7 +11,8 @@ export default function Bruteforce() {
     const [isBruteForcing, setIsBruteForcing] = useState<boolean>(false);
     const [progress, setProgress] = useState<number>(0);
     const [result, setResult] = useState<string>("");
-    
+    const [attempts, setAttempts] = useState<number>(0);
+
 
     useEffect(() => {
         const urlHash = searchParams.get('hash');
@@ -61,7 +62,17 @@ export default function Bruteforce() {
                         </div>
 
                         {isBruteForcing && (
-
+                            <div className="space-y-2">
+                                <div className="w-full bg-gray-700 rounded-full h-4">
+                                    <div
+                                    className="bg-blue-600 h-4 rounded-full transition-all duration-300"
+                                    style={{ width: `${progress}%` }}
+                                    ></div>
+                                </div>
+                                <p className="text-white text-center">
+                                Progress: {progress.toFixed(1)}% | Attempts: {attempts.toLocaleString()}
+                            </p>
+                            </div>
                         )}
                     </div>
                 
