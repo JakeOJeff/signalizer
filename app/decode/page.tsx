@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
 import { decodeMessage } from "utils/decodeMessage";
-
+import { useRouter } from "next/router";
 
 
 export default function Create() {
@@ -10,6 +10,7 @@ export default function Create() {
     const [encoded, setEncoded] = useState("");
     const [cryptoType, setCryptoType] = useState("Brute-Force");
     const [copied, setCopied] = useState<boolean>(false)
+    const router = useRouter();
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setMsg(e.target.value);
@@ -27,6 +28,11 @@ export default function Create() {
     };
 
     const handleEncode = async() => {
+
+        if (method === "SHA-256"){
+            router.push(`/decode/bruteforce?hash=${encodeURIComponent(msg)}`);
+            return;
+        }
 
         console.log(`Encoding "${msg}" using "${method}"`)
         const result = await decodeMessage(msg, method);
