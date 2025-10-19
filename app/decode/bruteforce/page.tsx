@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, ChangeEvent, use } from "react";
 import { useSearchParams } from "next/navigation";
+import { bruteforceSHA256, wordlists } from "@utils/bruteforce";
 
 export default function Bruteforce() {
 
@@ -40,16 +41,34 @@ export default function Bruteforce() {
         setResult("");
         setAttempts(0);
 
-        // try {
-           
+        try {
+            // const selectedWordlist = await getSelectedWordlist();
+            const totalWords = selectedWordlist.length;
             
+            if (totalWords === 0) {
+                setResult("Error: Wordlist is empty");
+                return;
+            }
+
+            // let currentAttempts = 0;
             
-        // } catch (error) {
-        //     setResult("Error during bruteforce process");
-        // } finally {
-        //     setIsBruteForcing(false);
-        //     setProgress(100);
-        // }
+            const result = await bruteforceSHA256(hash, selectedWordlist);
+            
+            setAttempts(result.attempts);
+            setProgress(100);
+            
+            if (result.found && result.plaintext) {
+                setResult(`Found: ${result.plaintext}`);
+            } else {
+                setResult("Password not found in wordlist");
+            }
+            
+        } catch (error) {
+            console.error("Bruteforce error:", error);
+            setResult("Error during bruteforce process");
+        } finally {
+            setIsBruteForcing(false);
+        }
     };
     return (
         <>
