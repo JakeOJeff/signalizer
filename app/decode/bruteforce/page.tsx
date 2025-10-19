@@ -61,6 +61,18 @@ export default function Bruteforce() {
                             </select>
                         </div>
 
+                        <button
+                            onClick={}
+                            disabled={isBruteForcing || !hash}
+                            className={`w-full p-4 rounded-xl text-xl font-bold ${
+                                isBruteForcing || !hash
+                                    ? 'bg-gray-600 cursor-not-allowed'
+                                    : 'bg-red-600 hover:bg-red-700 cursor-pointer'
+                            } text-white transition-colors duration-300`}
+                        >
+                            {isBruteForcing ? 'Bruteforcing...' : 'Start Bruteforce'}
+                        </button>
+
                         {isBruteForcing && (
                             <div className="space-y-2">
                                 <div className="w-full bg-gray-700 rounded-full h-4">
