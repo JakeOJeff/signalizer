@@ -42,11 +42,25 @@ export async function decodeMessage(msg: string, method: string): Promise<string
         } 
 
         case "binary": {
+
+            const cleaned = msg.trim();
+
+            if (!cleaned) {
+                result = "Input box is empty."
+                break;
+            }
+
+            if (!/^[01\s]+$/.test(cleaned)) {
+                result = "Invalid Binary String"
+                break;
+            }
+
             try {
                 result = msg.split(" ").map(bin => String.fromCharCode(parseInt(bin, 2))).join("");
             } catch {
-                result = "invalid Binary String"
+                result = "Invalid Binary String"
             }
+            break;
         }
     }
 
