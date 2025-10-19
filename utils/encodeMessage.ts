@@ -100,6 +100,16 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             });
             break;
         }
+
+        case "url": {
+            result = encodeURIComponent(msg);
+            break;
+        }
+
+        case "reverse": {
+            result = msg.split("").reverse().join("");
+            break;
+        }
     }
     return result;
 }
