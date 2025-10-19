@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState,. useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function Bruteforce() {
@@ -25,5 +25,27 @@ export default function Bruteforce() {
     }
 
 
-    
+    return (
+        <>
+            <main className="bg-gray-900 flex flex-col items-center justify-center min-h-screen w-full p-8">
+                <div className="flex flex-col items-center justify-center max-w-4xl w-full">
+                    <h1 className="text-6xl my-4 text-white">Hash Bruteforce</h1>
+                    <p className="text-xl mb-8 text-gray-300 text-center">Attempt to crack SHA-256 hash with wordlists</p>
+                    <div className="w-full space-y-6">
+                        <div className="space-y-2">
+                            <label className="text-white text-lg font-semibold">SHA-256 Hash</label>
+                            <input
+                                type="text"
+                                value={hash}
+                                onChange={handleHashchange}
+                                placeholder="Enter SHA-256 hash"
+                                className="w-full p-4 rounded-xl bg-gray-800 text-white border border-gray-600 focus:border-blue-500 focus:outline-noen"
+                            ></input>
+                        </div>
+                    </div>
+                
+                </div>
+            </main>
+        </>
+    );
 }
