@@ -1,8 +1,5 @@
-
-
 export async function decodeMessage(msg: string, method: string): Promise<string> {
     
-
     if (!msg.trim()) return "";
 
     let result = "";
@@ -63,7 +60,5 @@ export async function decodeMessage(msg: string, method: string): Promise<string
             break;
         }
     }
-
-
     return result;
 }

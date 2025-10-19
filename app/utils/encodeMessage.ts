@@ -91,10 +91,6 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             }).join("");
             break;
         }
-            
-        
-
     }
-
     return result;
 }

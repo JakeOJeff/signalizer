@@ -21,7 +21,13 @@
       {
         "name": "next"
       }
-    ]
+    ],
+
+    // 👇 added this
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["app/utils/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
