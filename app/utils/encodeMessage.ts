@@ -76,6 +76,22 @@ export async function encodeMessage(msg: string, method: string): Promise<string
             result = msg.split("").map(ch => ch.charCodeAt(0).toString(16).padStart(2, "0")).join(" ");
             break;
         }
+
+        case "caesar": {
+            const shift = 3;
+            result = msg.split("").map(ch => {
+                if (/[a-z]/.test(ch)) {
+                    return String.fromCharCode(((ch.charCodeAt(0) - 97 + shift) % 26) + 97);
+                }
+                else if (/[A-Z]/.test(ch)) {
+                    return String.fromCharCode(((ch.charCodeAt(0) - 65 + shift) % 26) + 65);
+                }
+                else {
+                    return ch;
+                }
+            }).join("");
+            break;
+        }
             
         
 
