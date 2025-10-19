@@ -40,7 +40,20 @@ export default function Bruteforce() {
                                 onChange={handleHashchange}
                                 placeholder="Enter SHA-256 hash"
                                 className="w-full p-4 rounded-xl bg-gray-800 text-white border border-gray-600 focus:border-blue-500 focus:outline-noen"
-                            ></input>
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-white text-lg font-semibold">Wordlist</label>
+                            <select
+                                value={wordlist}
+                                onChange={handleWordlistChange}
+                                className="w-full p-4 rounded-xl bg-gray-800 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
+                            >
+                                <option value="rockyou">rockyou.txt</option>
+                                <option value="common">Common Passwords</option>
+                                {/* <option value="custom">Custom Wordlist</option> */}
+                            </select>
                         </div>
                     </div>
                 
