@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, ChangeEvent, use } from "react";
 import { useSearchParams } from "next/navigation";
-import { bruteforceSHA256, wordlists } from "@utils/bruteforce";
+import { bruteforceSHA256, loadRockYouWordlist, wordlists } from "@utils/bruteforce";
 
 export default function Bruteforce() {
 
@@ -37,7 +37,7 @@ export default function Bruteforce() {
                 break;
 
             case "rockyou":
-                return wordlists.common; // temporary
+                return await loadRockYouWordlist(); // temporary
                 break;
 
         }
